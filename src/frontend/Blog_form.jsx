@@ -1,20 +1,32 @@
-import React, { useState } from 'react';
-import Button from '@mui/material/Button';
-import axios from 'axios';
+import React, { useState } from "react";
+import Button from "@mui/material/Button";
+import axios from "axios";
+// import { useNavigate } from "react-router-dom";
+import { Baseurl } from "./utils";
 
 function Blog_form() {
-    const [title, setTitle] = useState('');
-  const [desc, setdesc] = useState('');
+  const [title, setTitle] = useState("");
+  const [desc, setdesc] = useState("");
+  const [img, setimg] = useState(null);
+  const navigate = useNavigate();
 
   const handelsubmit = async (e) => {
     e.preventDefault();
 
+    const formData = new FormData();
+    formData.append("title", title);
+    formData.append("description", desc);
+    formData.append("img", img);
+
     try {
-      const response = await axios.post("http://localhost:3015/userdata", {
-        title,
-        description: desc,  // ✅ Make sure key name matches backend
+      const response = await axios.post(Baseurl() + "userdata", formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
       });
-      console.log("Submitted:", response.data);
+      console.log("Response:", response.data);
+      // ✅ After successful submission, navigate to blog view
+      navigate("/blogdata");
     } catch (err) {
       console.error("Error submitting:", err);
     }
@@ -22,7 +34,7 @@ function Blog_form() {
 
   return (
     <div className="blog_form">
-      <h1>blog-section</h1>
+      <h1>Add-Blog</h1>
       <section>
         <form onSubmit={handelsubmit}>
           <span>
@@ -51,19 +63,29 @@ function Blog_form() {
               type="file"
               id="blog_img"
               name="blog_img"
-              // onChange={(e) => setimg(e.target.files[0])}
-
+              accept="image/*"
+              onChange={(e) => setimg(e.target.files[0])}
+              required
             />
           </span>
           <span>
-            <Button variant="contained" disableElevation id="submit_btn" type="submit">
+            <Button
+              variant="contained"
+              disableElevation
+              id="submit_btn"
+              type="submit"
+            >
               Submit
             </Button>
           </span>
         </form>
         <hr />
         <div>
-          <Button variant="outlined" id="blog_view">
+          <Button
+            variant="outlined"
+            id="blog_view"
+            onClick={() => navigate("/blogdata")}
+          >
             Blog view
           </Button>
         </div>

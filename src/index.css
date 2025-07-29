@@ -16,12 +16,12 @@
   grid-template-rows: 20vh 1fr;
 }
 .blog_form > h1 {
-  text-transform: uppercase;
+ text-transform: uppercase;
+  font-weight: 900;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   display: flex;
   place-self: center;
-  font-weight: 900;
-  text-decoration: underline;
-  text-underline-offset: 9px;
+  color: black;
 }
 .blog_form > section {
   display: grid;
@@ -61,4 +61,86 @@ textarea {
 #blog_view {
   display: flex;
   place-self: center;
+}
+nav {
+  height: 12vh;
+  width: 100%;
+  box-shadow: 0 0 2px black;
+  display: grid;
+  grid-template-columns: 100%;
+  justify-content: center;
+}
+nav > span > h1 {
+  text-transform: uppercase;
+  font-weight: 900;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  display: flex;
+  place-self: center;
+  color: black;
+}
+nav > span {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px;
+  background-color: rgb(238, 232, 232);
+  color: white;
+}
+main {
+  height: 130vh;
+  background: url(https://images.pexels.com/photos/262508/pexels-photo-262508.jpeg);
+  background-size: 100% 100%;
+  display: grid;
+  justify-content: center;
+  grid-template-rows: 60%;
+  grid-template-columns: 70%;
+}
+main > span {
+  height: 100%;
+  display: grid;
+  place-content: center;
+  gap: 20px;
+  text-align: center;
+}
+
+main > span > h2 {
+  text-transform: uppercase;
+  font-weight: 900;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: white;
+  font-size: 50px;
+  text-shadow: 1px 1px black;
+}
+.blog_data {
+  height: auto;
+  display: grid;
+  grid-template-columns: 70%;
+  justify-content: center;
+}
+
+.blog_data > section > div {
+  display: grid;
+  grid-template-columns: 30% 60% 5%;
+  gap: 20px;
+  background-color: rgb(230, 226, 226);
+  padding: 20px;
+  justify-content: center;
+}
+.blog_data > section > div > span:nth-child(1) {
+}
+.blog_data > section > div > span:nth-child(1) > img {
+  max-height: 40vh;
+  width: 100%;
+}
+.blog_data > section > div > span:nth-child(3) {
+  display: grid;
+  align-content: baseline;
+  gap: 10px;
+}
+.blog_data > section > div > span:nth-child(3) > #delete_btn {
+  background-color: red;
+  color: white;
+}
+button:active {
+  transform: scale(1.03);
 }
