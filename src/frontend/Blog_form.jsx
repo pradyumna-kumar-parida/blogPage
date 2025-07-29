@@ -1,15 +1,14 @@
-import React, { useState } from "react";
+import React, { useState} from "react";
 import Button from "@mui/material/Button";
 import axios from "axios";
-// import { useNavigate } from "react-router-dom";
 import { Baseurl } from "./utils";
+import { useNavigate } from "react-router-dom";
 
 function Blog_form() {
   const [title, setTitle] = useState("");
   const [desc, setdesc] = useState("");
   const [img, setimg] = useState(null);
-  const navigate = useNavigate();
-
+const navigate = useNavigate()
   const handelsubmit = async (e) => {
     e.preventDefault();
 

@@ -60,7 +60,7 @@ app.post("/userdata", upload.single("img"), (req, res) => {
     // res.json({ message: "Data inserted successfully", id: result.insertId });
   })
 });
-app.get("/userdata", (req, res) => {
+app.get("/getdata", (req, res) => {
   const sql = "SELECT * FROM users";
   db.query(sql, (err, results) => {
     if (err) {
