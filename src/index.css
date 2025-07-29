@@ -1,0 +1,64 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  letter-spacing: 0.03em;
+  line-height: 1.03em;
+}
+.blog_form {
+  height: auto;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 60%;
+  justify-content: center;
+  /* border: 1px solid red; */
+  grid-template-rows: 20vh 1fr;
+}
+.blog_form > h1 {
+  text-transform: uppercase;
+  display: flex;
+  place-self: center;
+  font-weight: 900;
+  text-decoration: underline;
+  text-underline-offset: 9px;
+}
+.blog_form > section {
+  display: grid;
+  grid-template-columns: 75% 8% 1fr;
+  grid-template-rows: 95%;
+  align-content: center;
+  justify-content: center;
+}
+.blog_form > section > form {
+  display: grid;
+  gap: 16px;
+}
+.blog_form > section > form > span {
+  display: grid;
+  gap: 10px;
+}
+.blog_form > section > form > span > label {
+  text-transform: capitalize;
+}
+.blog_form > section > form > span > input,
+textarea {
+  padding: 10px;
+}
+#submit_btn {
+  display: flex;
+  place-self: center;
+  padding: 10px 30px;
+}
+.blog_form > section > hr {
+  height: 100%;
+  width: 1px;
+  background-color: rgba(0, 0, 0, 0.523);
+  border: none;
+  display: flex;
+  place-self: center;
+}
+#blog_view {
+  display: flex;
+  place-self: center;
+}
